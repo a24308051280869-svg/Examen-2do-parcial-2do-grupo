@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levis - Tienda Oficial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #ffffff;
+            color: #111111;
+        }
+        header {
+            height: 8vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        header img {
+            height: 80px;
+        }
+        nav {
+            height: 10vh;
+            background-color: #111111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #c41230;
+        }
+        .user-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        main {
+            padding: 20px 5%;
+        }
+        .categoria-seccion {
+            padding: 50px 0;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .categoria-seccion h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #c41230;
+            text-transform: uppercase;
+            border-left: 5px solid #111111;
+            padding-left: 12px;
+        }
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .producto-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+            background-color: #fafafa;
+        }
+        .producto-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background-color: #e5e5e5;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .producto-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .producto-card p {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 12px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 420px;
+        footer {
+            min-height: 8vh;
+            background-color: #111111;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 5%;
+            font-size: 14px;
+        }
+        footer p {
+            margin: 4px 0;
+        }
+        @media (max-width: 768px) {
+            .productos-grid {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                height: auto;
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="inicio">
+        <img src="levis.png" alt="Logo Levi's">
+    </header>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#mujer">Mujer</a></li>
+            <li><a href="#hombre">Hombre</a></li>
+            <li><a href="#kids">Kids</a></li>
+            <li><a href="#colecciones">Colecciones</a></li>
+            <li><a href="#rebajas">Rebajas</a></li>
+            <li><a href="#cuenta">Inicio</a></li>
+            <li><a href="#registro">Registro</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section id="mujer" class="categoria-seccion">
+            <h2>Mujer</h2>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="mujer1.jpg">
+                    <h3>Jeans 501</h3>
+                    <p>$1,500 MXN</p>
+                </div>
+                <div class="producto-card">
+                    <img src="mujer2.jpg">
+                    <h3>Chamarra de borrego mujer</h3>
+                    <p>$1,500 MXN</p>
+                </div>
+                <div class="producto-card">
+                    <img src="mujer3.jpg">
+                    <h3>Playera</h3>
+                    <p>$600 MXN</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="hombre" class="categoria-seccion">
+            <h2>Hombre</h2>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="hombre1.jpg">
+                    <h3>Jeans 511</h3>
+                    <p>$1,500 MXN</p>
+                </div>
+                <div class="producto-card">
+                    <img src="hombre2.jpg">
+                    <h3>Chamarra de borrego</h3>
+                    <p>$2,300 MXN</p>
+                </div>
+                <div class="producto-card">
+                    <img src="hombre3.jpg">
+                    <h3>Camisa</h3>
+                    <p>$1,200 MXN</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="kids" class="categoria-seccion">
+            <h2>kids</h2>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="kids1.jpg">
+                    <h3>conjunto rosa</h3>
+                    <p>$3000 MXN</p>
+                </div>
+                <div class="producto-card">
+                    <img src="kids2.jpg">
+                    <h3>conjunto cafe</h3>
+                    <p>$5000 MXN</p>
+                </div>
+                <div class="producto-card">
+                    <img src="kids3.jpg" >
+                    <h3>overol clasico</h3>
+                    <p>$2000 MXN</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="colecciones" class="categoria-seccion">
+            <h2>kids</h2>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="colecciones1.jpg">
+                    <h3>coleccion belinda</h3>
+                    <p>$12,000 MXN</p>
+                </div>
+                <div class="producto-card">
+                    <img src="colecciones2.jpg">
+                    <h3>coleccion clasica</h3>
+                    <p>$6000 MXN</p>
+                </div>
+                <div class="producto-card">
+                    <img src="colecciones3.jpg" >
+                    <h3>colecciones beyonce</h3>
+                    <p>$14,000 MXN</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="rebajas" class="categoria-seccion">
+            <h2>kids</h2>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="kids1.jpg">
+                    <h3>conjunto rosa</h3>
+                    <p>$3000-2000 MXN</p>
+                </div>
+                <div class="producto-card">
+                    <img src="mujer2.jpg">
+                    <h3>Chamarra de borrego mujer</h3>
+                    <p>$1500-1200 MXN</p>
+                </div>
+                <div class="producto-card">
+                    <img src="colecciones3.jpg" >
+                    <h3>colecciones beyonce</h3>
+                    <p>$14,000-10,000 MXN</p>
+                </div>
+            </div>
+        </section>
+
+    <div id="cuenta">
+        <h2>Iniciar Sesión</h2>
+        <form>
+            Usuario: <input type="text" name="usuario"><br><br>
+            Contraseña: <input type="password" name="clave"><br><br>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+    <div id="registro">
+        <h2>Registro de Usuario</h2>
+        <form>
+            Nombre completo: <input type="text" name="nombre"><br><br>
+            Correo electrónico: <input type="email" name="correo"><br><br>
+            Contraseña: <input type="password" name="clave_reg"><br><br>
+            <button type="submit">Crear cuenta</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Nombre: Martinez Montes Erik Osvaldo | Matrícula: 0869 | Grupo: 5°J </p>
+    </footer>
+</body>
+</html>
+

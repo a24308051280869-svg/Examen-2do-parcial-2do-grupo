@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levi's - Tienda Oficial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #ffffff;
+            color: #111111;
+        }
+        header {
+            height: 8vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        header img {
+            height: 45px;
+        }
+        nav {
+            height: 10vh;
+            background-color: #111111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #c41230;
+        }
+        .user-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .user-actions a, .user-actions span.btn-carrito {
+            background-color: #c41230;
+            color: #ffffff;
+            border: none;
+            padding: 8px 14px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: default;
+        }
+        .user-actions a {
+            cursor: pointer;
+        }
+        .user-actions a.secondary {
+            background-color: transparent;
+            border: 1px solid #ffffff;
+        }
+        main {
+            padding: 20px 5%;
+        }
+        .categoria-seccion {
+            padding: 50px 0;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .categoria-seccion h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #c41230;
+            text-transform: uppercase;
+            border-left: 5px solid #111111;
+            padding-left: 12px;
+        }
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .producto-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+            background-color: #fafafa;
+        }
+        .producto-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background-color: #e5e5e5;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .producto-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .producto-card p {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 12px;
+        }
+        .precio-rebaja {
+            color: #c41230;
+        }
+        .precio-anterior {
+            text-decoration: line-through;
+            color: #888888;
+            font-size: 14px;
+            margin-right: 8px;
+        }
+        .btn-agregar {
+            background-color: #111111;
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            width: 100%;
+        }
+        #cuenta-section {
+            padding: 60px 5%;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 420px;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #111111;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #c41230;
+            color: #ffffff;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-registro {
+            background-color: #111111;
+            cursor: default;
+        }
+        #mensaje-login {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        footer {
+            min-height: 8vh;
+            background-color: #111111;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 5%;
+            font-size: 14px;
+        }
+        footer p {
+            margin: 4px 0;
+        }
+        @media (max-width: 768px) {
+            .productos-grid {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                height: auto;
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="inicio">
+        <img src="levis.png" alt="Logo Levi's">
+    </header>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#mujer">Mujer</a></li>
+            <li><a href="#hombre">Hombre</a></li>
+            <li><a href="#kids">Kids</a></li>
+            <li><a href="#colecciones">Colecciones</a></li>
+            <li><a href="#rebajas">Rebajas</a></li>
+        </ul>
+        <div class="user-actions">
+            <span id="saludo-usuario" style="color: white; font-size: 13px;"></span>
+            <a href="#login-box" id="btn-nav-login">Iniciar Sesión</a>
+            <a href="#registro-box" class="secondary">Registro</a>
+            <span class="btn-carrito">Carrito (0)</span>
+        </div>
+    </nav>
+
+    <main>
+        <section id="mujer" class="categoria-seccion">
+            <h2>Mujer</h2>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="mujer1.jpg">
+                    <h3>Jeans 501 Original Fit</h3>
+                    <p>$1,699 MXN</p>
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                </div>
+                <div class="producto-card">
+                    <img src="mujer2.jpg">
+                    <h3>Chamarra Ex-Boyfriend Trucker</h3>
+                    <p>$1,899 MXN</p>
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                </div>
+                <div class="producto-card">
+                    <img src="mujer3.jpg">
+                    <h3>Playera Perfect Tee</h3>
+                    <p>$599 MXN</p>
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="hombre" class="categoria-seccion">
+            <h2>Hombre</h2>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="hombre1.jpg">
+                    <h3>Jeans 511 Slim Fit</h3>
+                    <p>$1,599 MXN</p>
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                </div>
+                <div class="producto-card">
+                    <img src="hombre2.jpg">
+                    <h3>Chamarra Sherpa Trucker</h3>
+                    <p>$2,299 MXN</p>
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                </div>
+                <div class="producto-card">
+                    <img src="hombre3.jpg">
+                    <h3>Camisa Barstow Western</h3>
+                    <p>$1,199 MXN</p>
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="kids" class="categoria-seccion">
+            <h2>kids</h2>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="kids1.jpg">
+                    <h3>Jeans 511 Slim Fit</h3>
+                    <p>$1,599 MXN</p>
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                </div>
+                <div class="producto-card">
+                    <img src="kids2.jpg">
+                    <h3>Chamarra Sherpa Trucker</h3>
+                    <p>$2,299 MXN</p>
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                </div>
+                <div class="producto-card">
+                    <img src="kids3.jpg" >
+                    <h3>Camisa Barstow Western</h3>
+                    <p>$1,199 MXN</p>
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
